@@ -1,0 +1,13 @@
+=== Short Answer Questions ===
+
+1. What are the tradeoffs between using a Stack vs. a Queue in your maze pathfinding algorithm?
+
+<Your answer here>
+
+2. What does it mean to "tokenize" a string? Why is that important for building a search engine?
+
+<Your answer here>
+
+3. In the search engine, what is the benefit of using a Map<string, Set<int>> structure?
+
+<Your answer here>

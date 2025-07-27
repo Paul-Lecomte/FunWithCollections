@@ -46,7 +46,11 @@ bool findPath(const Maze& maze, std::vector<Position>& path) {
     //Represents the four cardinal directions:                    Up,           Down,           Left,          Right
     const std::vector<std::pair<int, int> > directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
+    // BFS loop
+    // Continue until the queue is empty or we reach the end very simple
     while (!q.empty()) {
+        Position current = q.front(); q.pop();
+        if (current == end) break;
     }
 
     return false;

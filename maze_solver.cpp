@@ -70,6 +70,11 @@ bool findPath(const Maze& maze, std::vector<Position>& path) {
         }
     }
 
+    // if end is never reached return false
+    if (!visited.count(end)) return false;
+
+
+
     return false;
 }
 

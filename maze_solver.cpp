@@ -51,6 +51,14 @@ bool findPath(const Maze& maze, std::vector<Position>& path) {
     while (!q.empty()) {
         Position current = q.front(); q.pop();
         if (current == end) break;
+
+        //try all four directions to find the next position
+        // nr and nc are the new row and column indices
+        for (auto [dr, dc] : directions) {
+            int nr = current.row + dr;
+            int nc = current.col + dc;
+            Position neighbor = {nr,nc};
+        }
     }
 
     return false;

@@ -79,6 +79,9 @@ bool findPath(const Maze& maze, std::vector<Position>& path) {
     }
     path.push_back(parent[end]);
 
+    // The path is constructed in reverse order, so we need to reverse it
+    std::reverse(path.begin(), path.end());
+
     return true;
 }
 

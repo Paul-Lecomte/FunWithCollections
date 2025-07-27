@@ -73,9 +73,13 @@ bool findPath(const Maze& maze, std::vector<Position>& path) {
     // if end is never reached return false
     if (!visited.count(end)) return false;
 
+    // Reconstruct the path from end to start using the parent map
+    for (Position at = end; at != start; at = parent[at]) {
+        path.push_back(at);
+    }
+    path.push_back(parent[end]);
 
-
-    return false;
+    return true;
 }
 
 // Helper to print the path

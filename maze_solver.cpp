@@ -43,6 +43,12 @@ bool findPath(const Maze& maze, std::vector<Position>& path) {
     q.push(start);
     visited.insert(start);
 
+    //Represents the four cardinal directions:                    Up,           Down,           Left,          Right
+    const std::vector<std::pair<int, int> > directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
+    while (!q.empty()) {
+    }
+
     return false;
 }
 

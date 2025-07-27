@@ -58,6 +58,15 @@ bool findPath(const Maze& maze, std::vector<Position>& path) {
             int nr = current.row + dr;
             int nc = current.col + dc;
             Position neighbor = {nr,nc};
+
+            // check if the neighbor is valid and not visited
+            // nr and nc should be within bounds, maze[nr][nc] should be true (open), and neighbor should not be visited
+            // if all these conditions are met, we can push the neighbor into the queue
+            if (nr >= 0 && nr < rows && nc < cols && nc >= 0 && maze[nr][nc] && !visited.count(neighbor)) {
+                q.push(neighbor);
+                visited.insert(neighbor);
+                parent[neighbor] = current;
+            }
         }
     }
 

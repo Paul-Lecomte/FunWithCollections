@@ -38,7 +38,7 @@ bool findPath(const Maze& maze, std::vector<Position>& path) {
     std::unordered_map<Position, Position, Position::Hash> parent;
 
     Position start {0, 0};
-    Position end {rows - 1, cols - 1};
+    Position end {9, 9};
 
     q.push(start);
     visited.insert(start);
@@ -77,7 +77,7 @@ bool findPath(const Maze& maze, std::vector<Position>& path) {
     for (Position at = end; at != start; at = parent[at]) {
         path.push_back(at);
     }
-    path.push_back(parent[end]);
+    path.push_back(start);
 
     // The path is constructed in reverse order, so we need to reverse it
     std::reverse(path.begin(), path.end());
@@ -95,9 +95,16 @@ void printPath(const std::vector<Position>& path) {
 
 int main() {
     Maze maze = {
-        {true, true, false},
-        {false, true, false},
-        {false, true, true}
+        {true, true, false, false, false, false, false, false, false, false},
+        {false, true, false, false, false, false, false, false, false, false},
+        {false, true, true, true, true, true, true, true, true, false},
+        {false, false, false, false, false, false, false, false, true, false},
+        {false, false, false, false, false, false, false, false, true, false},
+        {false, false, false, false, false, false, false, false, true, false},
+        {false, false, false, false, false, false, false, false, true, false},
+        {false, false, false, false, false, false, false, false, true, false},
+        {false, false, false, false, false, false, false, false, true, false},
+        {false, false, false, false, false, false, false, false, true, true}
     };
 
     std::vector<Position> path;

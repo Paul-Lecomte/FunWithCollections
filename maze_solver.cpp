@@ -29,6 +29,20 @@ using Maze = std::vector<std::vector<bool>>;
 // Function to find path - to be implemented
 bool findPath(const Maze& maze, std::vector<Position>& path) {
     // TODO: implement BFS here
+    if (maze.empty() || maze[0].empty() || !maze[0][0]) return false;
+
+    int rows = maze.size();
+    int cols = maze[0].size();
+    std::queue<Position> q;
+    std::unordered_set<Position, Position::Hash> visited;
+    std::unordered_map<Position, Position, Position::Hash> parent;
+
+    Position start {0, 0};
+    Position end {rows - 1, cols - 1};
+
+    q.push(start);
+    visited.insert(start);
+
     return false;
 }
 
